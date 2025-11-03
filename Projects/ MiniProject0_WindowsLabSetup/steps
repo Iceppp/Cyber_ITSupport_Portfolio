@@ -1,0 +1,66 @@
+# 🧱 Mini Project 0 – Windows 10 Lab Setup (VirtualBox)
+
+### 🎯 Objective
+Set up a Windows 10 Pro virtual environment using Oracle VirtualBox to support future IT troubleshooting and cybersecurity labs (e.g., P1–P8).
+
+---
+
+## ⚙️ Step-by-Step Setup
+
+### 🪟 Step 1 – Install Windows 10 (Base System)
+- Created new VM: `ITSupport-Cybersecurity-Lab-Project`
+- Allocated 4GB RAM, 2 CPUs, and 50GB virtual disk.
+- Installed Windows 10 Pro (64-bit) using official Microsoft ISO.
+- Configured basic settings, privacy options, and created a local account (`IceLab`).
+
+📸 **Screenshot:** `01_Windows_FirstLogin.png`  
+✅ *Windows booted successfully to desktop.*
+
+---
+
+### 💽 Step 2 – Install VirtualBox Guest Additions
+- Inserted Guest Additions CD:  
+  `Devices → Insert Guest Additions CD Image...`
+- Ran `VBoxWindowsAdditions-amd64.exe` inside VM.
+- Restarted VM to enable:
+  - Fullscreen display
+  - Seamless mouse integration
+  - Drag-and-drop capability
+
+📸 **Screenshot:** `02_GuestAdditions_Installed.png`  
+✅ *Display scaling and file transfer between host & guest now work properly.*
+
+---
+
+### 🌐 Step 3 – Configure Bridged Network
+- Switched VM network mode from `NAT` → `Bridged Adapter`.
+- Selected adapter: **Intel(R) Wi-Fi 6 AX200 160MHz**
+- Verified connectivity using:
+  ```bash
+  ping google.com
+
+ ---
+
+ 
+### 📁 Step 4 – Set Up Shared Folder
+- Created shared folder on host:
+- Added to VirtualBox via:  
+**Settings → Shared Folders → Add Folder**
+- Folder Name: `Project IT_Cybersecurity`
+- Options: ✅ Auto-mount, ✅ Make Permanent
+- Enabled “Network Discovery and File Sharing” in Windows.
+- Verified path:  D:\Project IT_Cybersecurity
+
+---
+
+### 💾 Step 5 – Create Snapshot (Baseline)
+- Saved baseline state using: **Machine → Take Snapshot**
+- Named snapshot: ``` Clean_State_Before_P1 ```
+- Description: ``` Baseline setup: Windows 10 Pro + Guest Additions + Bridged Network + Shared Folder. ```
+📸 **Screenshot:** `05_Snapshot_Created.png`
+✅ *Snapshot successfully created for system restore before each project.* --- ###
+
+---
+
+--- ## 🧠 Reflection This mini project served as the foundation for my cybersecurity and IT support environment. I learned to configure VirtualBox efficiently, manage snapshots, and ensure seamless file and network integration between host and guest systems. This environment will be used to simulate real-world troubleshooting cases in upcoming projects (P1–P8). --- ##
+🧾 Author **Passawut Sawongkhan (Ice)** 📍 Sydney, Australia 🎓 Aspiring IT Support & Cybersecurity Professional 
