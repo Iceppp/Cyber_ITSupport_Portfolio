@@ -1,0 +1,5 @@
+C:\Users\Passawut_IT_Security>nslookup google.com
+Server:  UnKnown
+Address:  1.2.3.4
+
+*** UnKnown can't find google.com: No response from server

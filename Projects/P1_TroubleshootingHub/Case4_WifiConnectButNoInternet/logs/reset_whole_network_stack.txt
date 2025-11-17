@@ -1,0 +1,73 @@
+C:\Windows\system32>netsh winsock reset
+
+Sucessfully reset the Winsock Catalog.
+You must restart the computer in order to complete the reset.
+
+
+C:\Windows\system32>netsh int ip reset
+Resetting Compartment Forwarding, OK!
+Resetting Compartment, OK!
+Resetting Control Protocol, OK!
+Resetting Echo Sequence Request, OK!
+Resetting Global, OK!
+Resetting Interface, OK!
+Resetting Anycast Address, OK!
+Resetting Multicast Address, OK!
+Resetting Unicast Address, OK!
+Resetting Neighbor, OK!
+Resetting Path, OK!
+Resetting Potential, OK!
+Resetting Prefix Policy, OK!
+Resetting Proxy Neighbor, OK!
+Resetting Route, OK!
+Resetting Site Prefix, OK!
+Resetting Subinterface, OK!
+Resetting Wakeup Pattern, OK!
+Resetting Resolve Neighbor, OK!
+Resetting , OK!
+Resetting , OK!
+Resetting , OK!
+Resetting , OK!
+Resetting , failed.
+Access is denied.
+
+Resetting , OK!
+Resetting , OK!
+Resetting , OK!
+Resetting , OK!
+Resetting , OK!
+Resetting , OK!
+Resetting , OK!
+Resetting , OK!
+Restart the computer to complete this action.
+
+
+C:\Windows\system32>ipconfig /flushdns
+
+Windows IP Configuration
+
+Successfully flushed the DNS Resolver Cache.
+
+C:\Windows\system32>ipconfig /release
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::d69d:5837:9efd:e704%4
+   Default Gateway . . . . . . . . . :
+
+C:\Windows\system32>ipconfig /renew
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : gateway
+   Link-local IPv6 Address . . . . . : fe80::d69d:5837:9efd:e704%4
+   IPv4 Address. . . . . . . . . . . : 10.0.0.73
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 10.0.0.138
