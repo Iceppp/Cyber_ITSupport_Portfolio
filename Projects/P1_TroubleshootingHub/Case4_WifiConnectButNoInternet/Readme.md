@@ -18,8 +18,8 @@ Even though the VM uses an Ethernet adapter, the symptoms match real Wi-Fi issue
 Verified normal operation.
 
 ### ✔ Commands
-ipconfig /all
-ping google.com
+ - `ipconfig /all`
+ - `ping google.com`
 
 ### ✔ Evidence
 - baseline_ipconfig_all.txt  
@@ -44,10 +44,10 @@ To intentionally break the network:
 ## 🚨 Step 3 — Broken State Evidence
 
 ### ✔ Commands
-ipconfig /all
-ping 8.8.8.8
-ping google.com
-nslookup google.com
+- `ipconfig /all`
+- `ping 8.8.8.8`
+- `ping google.com`
+- `nslookup google.com`
 
 ### ❗ Observed
 - Default Gateway missing  
@@ -101,10 +101,10 @@ Rebooted once.
 ## ✅ Step 6 — Verification (After Fix)
 
 ### ✔ Commands
-ipconfig /all
-ping 8.8.8.8
-ping google.com
-nslookup google.com
+- `ipconfig /all`
+- `ping 8.8.8.8`
+- `ping google.com`
+- `nslookup google.com`
 
 ### ✔ Success
 - Default Gateway restored  
