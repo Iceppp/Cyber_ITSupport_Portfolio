@@ -84,15 +84,15 @@ Result: **No routing** + **Broken DNS**.
 ## 🛠 Step 5 — Fix Procedure (Command-Line)
 
 ### ✔ Restore DHCP for IP + DNS
-netsh interface ip set address name="Ethernet" source=dhcp
-netsh interface ip set dns name="Ethernet" source=dhcp
+- `netsh interface ip set address name="Ethernet" source=dhcp`
+- `netsh interface ip set dns name="Ethernet" source=dhcp`
 
 ### ✔ Reset TCP/IP stack
-ipconfig /flushdns
-ipconfig /release
-ipconfig /renew
-netsh winsock reset
-netsh int ip reset
+- `ipconfig /flushdns`
+- `ipconfig /release`
+- `ipconfig /renew`
+- `netsh winsock reset`
+- `netsh int ip reset`
 
 Rebooted once.
 
