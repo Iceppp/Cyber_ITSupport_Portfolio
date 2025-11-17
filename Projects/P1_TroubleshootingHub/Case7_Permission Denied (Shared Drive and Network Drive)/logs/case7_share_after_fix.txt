@@ -1,0 +1,9 @@
+ Volume in drive \\localhost\deptshare has no label.
+ Volume Serial Number is 2A0C-45DA
+
+ Directory of \\localhost\deptshare
+
+11/17/2025  06:58 AM    <DIR>          .
+11/17/2025  06:58 AM    <DIR>          ..
+               0 File(s)              0 bytes
+               2 Dir(s)  17,357,606,912 bytes free
