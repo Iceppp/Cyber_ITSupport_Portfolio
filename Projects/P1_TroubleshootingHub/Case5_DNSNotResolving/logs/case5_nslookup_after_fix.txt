@@ -1,0 +1,8 @@
+C:\Windows\system32>nslookup google.com
+Server:  belong.gateway
+Address:  10.0.0.138
+
+Non-authoritative answer:
+Name:    google.com
+Addresses:  2404:6800:4006:801::200e
+          142.250.195.142

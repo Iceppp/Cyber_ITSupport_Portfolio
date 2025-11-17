@@ -1,0 +1,15 @@
+C:\Users\Passawut_IT_Security>nslookup google.com
+DNS request timed out.
+    timeout was 2 seconds.
+Server:  UnKnown
+Address:  1.1.1.9
+
+DNS request timed out.
+    timeout was 2 seconds.
+DNS request timed out.
+    timeout was 2 seconds.
+DNS request timed out.
+    timeout was 2 seconds.
+DNS request timed out.
+    timeout was 2 seconds.
+*** Request to UnKnown timed-out

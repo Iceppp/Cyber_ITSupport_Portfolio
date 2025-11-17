@@ -1,0 +1,27 @@
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-MFC4DCQ
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : gateway
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : gateway
+   Description . . . . . . . . . . . : Intel(R) PRO/1000 MT Desktop Adapter
+   Physical Address. . . . . . . . . : 08-00-27-E1-0A-49
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::d69d:5837:9efd:e704%4(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.0.0.73(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : 17 พฤศจิกายน 2568 5:24:01
+   Lease Expires . . . . . . . . . . : 18 พฤศจิกายน 2568 5:23:26
+   Default Gateway . . . . . . . . . : 10.0.0.138
+   DHCP Server . . . . . . . . . . . : 10.0.0.138
+   DHCPv6 IAID . . . . . . . . . . . : 101187623
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-30-9B-C2-09-08-00-27-E1-0A-49
+   DNS Servers . . . . . . . . . . . : 10.0.0.138
+   NetBIOS over Tcpip. . . . . . . . : Enabled

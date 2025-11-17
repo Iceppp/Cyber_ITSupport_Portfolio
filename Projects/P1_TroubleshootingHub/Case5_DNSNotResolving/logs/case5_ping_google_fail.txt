@@ -1,0 +1,2 @@
+C:\Users\Passawut_IT_Security>ping google.com
+Ping request could not find host google.com. Please check the name and try again.
