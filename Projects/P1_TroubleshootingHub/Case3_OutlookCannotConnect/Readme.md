@@ -1,103 +1,160 @@
-# 🧩 Case 3 – Outlook Cannot Connect (DNS Misconfiguration)
-
-### 🎯 Objective
-Simulate and resolve a network connectivity issue where Outlook Web cannot connect due to incorrect DNS configuration.  
-This case demonstrates how IT Support engineers diagnose and repair DNS-related service disruptions.
+# 🧩 Case 3 — Outlook Cannot Connect (DNS Misconfiguration)
+**Category:** P1 – Troubleshooting Hub  
+**Issue Type:** DNS Misconfiguration / Outlook Web Connectivity Failure
 
 ---
 
-## 🧠 Scenario Overview
-A user reports that **Outlook Web (Office 365)** cannot connect.  
-Investigation reveals that DNS resolution is pointing to an incorrect IP (127.0.0.1), preventing access to Microsoft’s mail servers.
+## 🎯 Scenario  
+User reports:
 
-This case simulates that failure by manually editing the Windows `hosts` file to redirect Outlook-related domains to localhost.
+> “Outlook Web won't load. The browser keeps saying it cannot connect.”
 
----
-
-## ⚙️ Environment Setup
-- **Windows 10/11 VM (VirtualBox / Hyper-V)**
-- **Local Administrator Account**
-- **PowerShell (Run as Administrator)**
-- Folder structure:
-C:\ITSupportLabs\Case3_OutlookCannotConnect
-
+This case simulates a real-world issue where incorrect DNS mapping blocks access to Microsoft 365 Outlook. The misconfiguration is applied by editing the Windows `hosts` file to redirect Outlook domains to `127.0.0.1`, causing Outlook Web to fail.
 
 ---
 
-## 🧩 Step 1 – Simulate DNS Failure
-Use the PowerShell script below to intentionally misconfigure DNS resolution for Outlook-related domains.
+## 🧪 Step 1 — Baseline (Normal Network State)
+
+Before breaking DNS, the system was verified to resolve Microsoft 365 domains correctly.
+
+### ✔ Checks performed:
+- Correct DNS resolution for:
+  - `outlook.office.com`
+  - `outlook.office365.com`
+  - `login.microsoftonline.com`
+- Browser loads Outlook Web login screen normally.
+- Test-NetConnection reports `TcpTestSucceeded: True`
+
+### 📁 Baseline Evidence:
+- `baseline_dns_status.txt`
+- `baseline_network_test.txt`
+- `screenshots/baseline_outlook_ok.png`
+
+---
+
+## 🧨 Step 2 — Simulation (Create DNS Failure)
+
+To reproduce the issue, DNS was intentionally misconfigured using a PowerShell script:
 
 ```powershell
 .\Simulate-OutlookDNSFail.ps1
+```
 
-Affected Domains
+### ✔ What the script does:
+Appends invalid entries to:
+
+```
+C:\Windows\System32\drivers\etc\hosts
+```
+
+Mapping key domains to `127.0.0.1`:
+
+```
 outlook.office.com
 outlook.office365.com
-outlook.live.com
 login.microsoftonline.com
 graph.microsoft.com
 login.live.com
+outlook.live.com
+```
 
-Expected Result
+### ❗ Broken Behavior Observed:
+- Browser shows:
+  **“Hmmm… can’t reach this page”**  
+  or  
+  **ERR_CONNECTION_REFUSED**
+- Outlook Web fails to load.
+- DNS resolves to `127.0.0.1`.
+- Network tests fail.
 
-When accessing https://outlook.office365.com
-, the browser displays:
-
-“Hmmm... can’t reach this page”
-(ERR_CONNECTION_REFUSED)
-
-📸 Screenshot:
-screenshots/01_outlook_disconnected.png
-
----
-
- ## 🧩 Step 2 – Collect Evidence (Before Fix)
-Run the evidence collection script to record DNS and TCP connectivity before fixing.
-.\Collect-Connectivity.ps1 -Phase before
-Generated Logs
-File	| Description
-dns_status_before.txt |	Shows Outlook domain resolving to 127.0.0.1
-network_test_before.txt |	TCP connection test fails (TcpTestSucceeded: False)
-
-📂 Location: logs/
+### 📁 Evidence (Broken State):
+- `screenshots/01_outlook_disconnected.png`
+- `logs/dns_status_before.txt`
+- `logs/network_test_before.txt`
 
 ---
 
-## 🧩 Step 3 – Repair DNS Configuration
-Restore the original hosts file and flush the DNS cache.
+## 🔍 Step 3 — Diagnosis
+
+### ✔ Findings:
+1. DNS resolution for Outlook domains returned **127.0.0.1** instead of Microsoft’s real IPs.
+2. Browser could not connect to Microsoft 365 servers.
+3. `Test-NetConnection` confirmed TCP failures.
+4. Hosts file contained incorrect manual entries.
+
+### 🧠 Root Cause:
+Outlook-related domains were manually overridden in the **hosts file**, redirecting them to localhost and preventing proper DNS resolution.
+
+---
+
+## 🛠 Step 4 — Fix (Restore DNS Configuration)
+
+DNS was repaired using:
+
+```powershell
 .\Restore-Hosts.ps1
+```
 
-This removes the invalid DNS entries or restores from backup.
-Then, re-run the connectivity test: .\Collect-Connectivity.ps1 -Phase after
+### ✔ What the script does:
+- Restores the original hosts file (from backup)
+- Removes malicious or incorrect DNS entries
+- Flushes DNS cache:
+  ```
+  ipconfig /flushdns
+  ```
+
+After restoring DNS, connectivity tests were re-run:
+
+```powershell
+.\Collect-Connectivity.ps1 -Phase after
+```
 
 ---
 
-## 🧩 Step 4 – Verification (After Fix)
-✅ Expected Results
-Check	| Result
-Resolve-DnsName outlook.office365.com |	Returns real Microsoft IP (e.g., 52.x.x.x)
-Test-NetConnection |	TcpTestSucceeded : True
-Outlook Web	| Loads successfully and shows Microsoft login screen
+## 🧾 Step 5 — Verification (After Fix)
 
-📸 Screenshot:
-screenshots/02_outlook_connected.png
+### Expected Results
+
+| Check | Expected Result |
+|-------|------------------|
+| `Resolve-DnsName outlook.office365.com` | Returns real Microsoft IP (e.g., 52.x.x.x) |
+| `Test-NetConnection outlook.office365.com` | `TcpTestSucceeded: True` |
+| Browser | Outlook login page loads normally |
+
+### 📁 Evidence (After Fix):
+- `screenshots/02_outlook_connected.png`
+- `logs/dns_status_after.txt`
+- `logs/network_test_after.txt`
 
 ---
-## 🧩 Step 5 – Quick Verification (Optional)
-You can run this helper script to quickly verify connectivity and open Outlook Web automatically.
+
+## 🧩 Optional — Quick Verification Script
+
+Script:
+```
 .\Quick-Verify.ps1
+```
 
-This will:
-
-- Run Resolve-DnsName and Test-NetConnection
-
-- Launch Outlook Web in your browser
-
-- Save a summary file at logs\quick_verify.txt
+Performs:
+- DNS resolution check  
+- Network connectivity test  
+- Launches Outlook Web automatically  
+- Saves summary to:
+  ```
+  logs/quick_verify.txt
+  ```
 
 ---
-## 🧩 Step 6 – Learning Outcomes
-✅ Understand how DNS misconfiguration affects Outlook and Microsoft 365 services
-✅ Learn to simulate and diagnose Outlook connection failures
-✅ Practice restoring the hosts file and clearing the DNS cache
-✅ Document troubleshooting steps for your IT portfolio
+
+## 🧠 Learning Outcomes
+
+✔ Understand how DNS issues affect Microsoft 365 services  
+✔ Learn to modify and restore the Windows hosts file  
+✔ Diagnose DNS and connectivity problems with PowerShell  
+✔ Use Resolve-DnsName & Test-NetConnection effectively  
+✔ Document troubleshooting scenarios professionally  
+
+---
+
+## 📌 Status: **Resolved**  
+Outlook Web connectivity restored after fixing DNS misconfiguration.
