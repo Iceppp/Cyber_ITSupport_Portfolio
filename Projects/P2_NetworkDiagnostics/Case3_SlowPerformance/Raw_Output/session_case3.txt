@@ -1,0 +1,126 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20251127132631
+Username: DESKTOP-MFC4DCQ\Passawut_IT_Security
+RunAs User: DESKTOP-MFC4DCQ\Passawut_IT_Security
+Configuration Name: 
+Machine: DESKTOP-MFC4DCQ (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 9596
+PSVersion: 5.1.19041.6456
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.6456
+BuildVersion: 10.0.19041.6456
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\Raw_Output\session_case3.txt
+PS Z:\P2_Network Diagnostics\Case3_SlowPerformance> ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-MFC4DCQ
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : gateway
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : gateway
+   Description . . . . . . . . . . . : Intel(R) PRO/1000 MT Desktop Adapter
+   Physical Address. . . . . . . . . : 08-00-27-E1-0A-49
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   IPv6 Address. . . . . . . . . . . : fd3b:28c0:f36f:1f4e:8ce3:c3c:7d73:1ac4(Preferred)
+   Temporary IPv6 Address. . . . . . : fd3b:28c0:f36f:1f4e:8945:b9c7:5ee1:3cea(Preferred)
+   Link-local IPv6 Address . . . . . : fe80::d69d:5837:9efd:e704%4(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.0.0.73(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : 27 พฤศจิกายน 2568 11:31:57
+   Lease Expires . . . . . . . . . . : 28 พฤศจิกายน 2568 11:32:25
+   Default Gateway . . . . . . . . . : 10.0.0.138
+   DHCP Server . . . . . . . . . . . : 10.0.0.138
+   DHCPv6 IAID . . . . . . . . . . . : 101187623
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-30-9B-C2-09-08-00-27-E1-0A-49
+   DNS Servers . . . . . . . . . . . : 10.0.0.138
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+PS Z:\P2_Network Diagnostics\Case3_SlowPerformance> ping -n 20 8.8.8.8
+
+Pinging 8.8.8.8 with 32 bytes of data:
+Reply from 8.8.8.8: bytes=32 time=67ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=59ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=26ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=42ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=50ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=26ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=57ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=27ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=32ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=28ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=42ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=30ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=32ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=144ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=39ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=117ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=113ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=78ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=19ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=16ms TTL=116
+
+Ping statistics for 8.8.8.8:
+    Packets: Sent = 20, Received = 20, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 16ms, Maximum = 144ms, Average = 52ms
+PS Z:\P2_Network Diagnostics\Case3_SlowPerformance> tracert 8.8.8.8
+
+Tracing route to dns.google [8.8.8.8]
+over a maximum of 30 hops:
+
+  1    65 ms    19 ms     5 ms  belong.gateway [10.0.0.138]
+  2    27 ms    84 ms    54 ms  58.162.27.77
+  3    24 ms    90 ms    78 ms  203.50.60.49
+  4     *        *        *     Request timed out.
+  5    55 ms   123 ms    90 ms  10.2.34.30
+  6    42 ms    44 ms    34 ms  10.2.4.29
+  7    69 ms    85 ms    25 ms  10.2.4.46
+  8    78 ms   101 ms   125 ms  10.2.4.49
+  9    18 ms    91 ms   170 ms  Bundle-Ether97.ken-edge903.sydney.telstra.net [61.8.24.125]
+ 10    50 ms    60 ms    58 ms  goo2503144.lnk.telstra.net [58.163.91.202]
+ 11    68 ms    25 ms    88 ms  192.178.97.143
+ 12    44 ms    32 ms    26 ms  142.250.224.223
+ 13    57 ms   147 ms    53 ms  dns.google [8.8.8.8]
+
+Trace complete.
+PS Z:\P2_Network Diagnostics\Case3_SlowPerformance> netstat -e
+Interface Statistics
+
+                           Received            Sent
+
+Bytes                     938558340        76779991
+Unicast packets             4068571          625795
+Non-unicast packets           10796            2472
+Discards                          0               0
+Errors                            0               0
+Unknown protocols                 0
+PS Z:\P2_Network Diagnostics\Case3_SlowPerformance> arp -a
+
+Interface: 10.0.0.73 --- 0x4
+  Internet Address      Physical Address      Type
+  10.0.0.5              f8-b4-6a-48-52-a9     dynamic
+  10.0.0.138            90-4d-4a-8a-fb-0e     dynamic
+  10.0.0.255            ff-ff-ff-ff-ff-ff     static
+  224.0.0.22            01-00-5e-00-00-16     static
+  224.0.0.251           01-00-5e-00-00-fb     static
+  224.0.0.252           01-00-5e-00-00-fc     static
+  239.255.255.250       01-00-5e-7f-ff-fa     static
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static
+PS Z:\P2_Network Diagnostics\Case3_SlowPerformance> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20251127132922
+**********************

@@ -1,0 +1,19 @@
+
+Tracing route to dns.google [8.8.8.8]
+over a maximum of 30 hops:
+
+  1     4 ms     4 ms     4 ms  belong.gateway [10.0.0.138] 
+  2    29 ms    33 ms    38 ms  58.162.27.77 
+  3    28 ms    32 ms    34 ms  203.50.60.49 
+  4     *        *        *     Request timed out.
+  5    52 ms    49 ms    53 ms  10.2.34.30 
+  6    43 ms    42 ms    43 ms  10.2.4.29 
+  7    26 ms    45 ms    62 ms  10.2.4.46 
+  8    59 ms    47 ms    24 ms  10.2.4.49 
+  9    89 ms    84 ms    76 ms  Bundle-Ether97.ken-edge903.sydney.telstra.net [61.8.24.125] 
+ 10    28 ms    25 ms    32 ms  goo2503144.lnk.telstra.net [58.163.91.202] 
+ 11    20 ms    19 ms    18 ms  192.178.97.143 
+ 12    16 ms    15 ms    14 ms  142.250.224.223 
+ 13    14 ms    13 ms    18 ms  dns.google [8.8.8.8] 
+
+Trace complete.
