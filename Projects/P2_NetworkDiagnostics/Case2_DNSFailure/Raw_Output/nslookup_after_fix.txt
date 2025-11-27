@@ -1,0 +1,7 @@
+Server:  belong.gateway
+Address:  10.0.0.138
+
+Name:    google.com
+Addresses:  2404:6800:4006:80a::200e
+	  172.217.167.78
+

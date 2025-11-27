@@ -1,0 +1,93 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20251127123707
+Username: DESKTOP-MFC4DCQ\Passawut_IT_Security
+RunAs User: DESKTOP-MFC4DCQ\Passawut_IT_Security
+Configuration Name: 
+Machine: DESKTOP-MFC4DCQ (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 8812
+PSVersion: 5.1.19041.6456
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.6456
+BuildVersion: 10.0.19041.6456
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\Raw_Output\session_case2.txt
+PS Z:\P2_Network Diagnostics\Case2_DNSFailure> ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-MFC4DCQ
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : gateway
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : gateway
+   Description . . . . . . . . . . . : Intel(R) PRO/1000 MT Desktop Adapter
+   Physical Address. . . . . . . . . : 08-00-27-E1-0A-49
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   IPv6 Address. . . . . . . . . . . : fd3b:28c0:f36f:1f4e:8ce3:c3c:7d73:1ac4(Preferred)
+   Temporary IPv6 Address. . . . . . : fd3b:28c0:f36f:1f4e:8945:b9c7:5ee1:3cea(Preferred)
+   Link-local IPv6 Address . . . . . : fe80::d69d:5837:9efd:e704%4(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.0.0.73(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : 27 พฤศจิกายน 2568 11:31:57
+   Lease Expires . . . . . . . . . . : 28 พฤศจิกายน 2568 11:31:29
+   Default Gateway . . . . . . . . . : 10.0.0.138
+   DHCP Server . . . . . . . . . . . : 10.0.0.138
+   DHCPv6 IAID . . . . . . . . . . . : 101187623
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-30-9B-C2-09-08-00-27-E1-0A-49
+   DNS Servers . . . . . . . . . . . : 127.0.0.1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+PS Z:\P2_Network Diagnostics\Case2_DNSFailure> ping 8.8.8.8
+
+Pinging 8.8.8.8 with 32 bytes of data:
+Reply from 8.8.8.8: bytes=32 time=18ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=13ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=25ms TTL=116
+Reply from 8.8.8.8: bytes=32 time=18ms TTL=116
+
+Ping statistics for 8.8.8.8:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 13ms, Maximum = 25ms, Average = 18ms
+PS Z:\P2_Network Diagnostics\Case2_DNSFailure> ping google.com
+Ping request could not find host google.com. Please check the name and try again.
+PS Z:\P2_Network Diagnostics\Case2_DNSFailure> nslookup google.com
+Server:  UnKnown
+Address:  127.0.0.1
+
+*** UnKnown can't find google.com: No response from server
+PS Z:\P2_Network Diagnostics\Case2_DNSFailure> tracert 8.8.8.8
+
+Tracing route to 8.8.8.8 over a maximum of 30 hops
+
+  1     3 ms     6 ms     2 ms  10.0.0.138
+  2    81 ms    26 ms    28 ms  58.162.27.77
+  3    11 ms    11 ms    12 ms  203.50.60.49
+  4     *        *        *     Request timed out.
+  5    14 ms    13 ms    13 ms  10.2.34.30
+  6    18 ms    28 ms    14 ms  10.2.4.29
+  7    15 ms    16 ms    11 ms  10.2.4.42
+  8    15 ms    12 ms    13 ms  10.2.4.49
+  9    13 ms    12 ms    13 ms  61.8.24.125
+ 10    18 ms    11 ms    12 ms  58.163.91.202
+ 11    14 ms    17 ms    22 ms  192.178.97.143
+ 12    14 ms    21 ms    14 ms  142.250.224.223
+ 13    14 ms    17 ms    12 ms  8.8.8.8
+
+Trace complete.
+PS Z:\P2_Network Diagnostics\Case2_DNSFailure> stop-transcript
+**********************
+Windows PowerShell transcript end
+End time: 20251127123925
+**********************
