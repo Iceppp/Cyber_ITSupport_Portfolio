@@ -1,2 +1,0 @@
-Asset ID,Device Name,Device Type,Manufacturer,Model,Serial Number,User,Department,Location,Status,Purchase Date,Warranty Expiry Date,Age (Years),Purchase Cost (AUD),Notes
-"Ice, Staff01",LAPTOP-KC9HQOOF,Laptop,LENOVO,82B1,PF2G715G,User,IT,Sydney Office,In Use,1/02/2024,1/02/2027,1.9,2000,Imported from PowerShell script
