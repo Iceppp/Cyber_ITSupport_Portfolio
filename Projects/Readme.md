@@ -1,6 +1,8 @@
 # 🧭 IT Support & Cybersecurity Projects (P1–P5)
 
 Hands-on IT Support portfolio by **Passawut Sawongkhan (Ice)**.  
+📍 Based in Sydney, Australia(Open to relocate across Australia) | Visa: Graduate 485 (Full Working Rights)
+These projects simulate real issues handled by Service Desk / IT Support / MSP technicians...
 These projects simulate real issues handled by **Service Desk / IT Support / MSP technicians** – from Windows troubleshooting and networking, to Microsoft 365 admin, asset tracking, and backup & recovery.
 
 All projects were:
@@ -96,7 +98,7 @@ Simulates 8 real IT incidents commonly seen in enterprise & MSP environments:
 - User onboarding (Alice, Bob, Chloe) with proper UPNs  
 - Password reset workflows (helpdesk scenario)  
 - License assignment & verification  
-- MFA enablement via Entra ID  
+- Enforced MFA via Entra ID for security compliance 
 - Group creation (Sales, Marketing, HR) + membership management  
 - RBAC role assignment (Helpdesk Admin, Reports Reader)  
 - User offboarding: block sign-in, remove licenses, remove groups  
@@ -185,7 +187,7 @@ Assets in `/assets`, automation in `/scripts`, evidence in `/screenshots`.
 #### ✔ Ransomware Simulation
 - Renamed files with `.locked` extension  
 - Created fake ransom note  
-- Restored clean copies from backup  
+- **Restored clean copies from backup**  
 - Removed encrypted files + note  
 
 #### ✔ Documentation
