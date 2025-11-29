@@ -1,8 +1,6 @@
 # 🧭 IT Support & Cybersecurity Projects (P1–P5)
 
-Hands-on IT Support portfolio by **Passawut Sawongkhan (Ice)**.  
-📍 Based in Sydney, Australia(Open to relocate across Australia) | Visa: Graduate 485 (Full Working Rights)
-These projects simulate real issues handled by Service Desk / IT Support / MSP technicians...
+Hands-on IT Support portfolio by **Passawut Sawongkhan (Ice)**. 
 These projects simulate real issues handled by **Service Desk / IT Support / MSP technicians** – from Windows troubleshooting and networking, to Microsoft 365 admin, asset tracking, and backup & recovery.
 
 All projects were:
