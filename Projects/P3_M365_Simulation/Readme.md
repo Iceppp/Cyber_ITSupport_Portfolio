@@ -15,9 +15,9 @@ Simulated corporate employees:
 
 | Name | Role | Email |
 |------|------|--------|
-| **Alice Johnson** | Staff | alice@northbridgeconsult.onmicrosoft.com |
-| **Bob Smith** | Helpdesk Technician | bob@northbridgeconsult.onmicrosoft.com |
-| **Chloe Brown** | Manager | chloe@northbridgeconsult.onmicrosoft.com |
+| **Alice Johnson** | Staff | alice.j@northbridgeconsult.onmicrosoft.com |
+| **Bob Smith** | Helpdesk Technician | bob.s@northbridgeconsult.onmicrosoft.com |
+| **Chloe Brown** | Manager | chloe.b@northbridgeconsult.onmicrosoft.com |
 
 ---
 
