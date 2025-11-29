@@ -100,6 +100,7 @@ Simulated real offboarding workflow:
 ---
 
 ## 📂 Folder Structure
+```
 P3_M365_Admin_Simulation/
 │
 ├── README.md
@@ -130,6 +131,7 @@ P3_M365_Admin_Simulation/
 └── assets/
 ├── User_List.csv
 ├── Role_Matrix.xlsx
+```
 
 ---
 
