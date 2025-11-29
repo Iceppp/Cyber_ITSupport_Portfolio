@@ -26,6 +26,18 @@ P5_Backup_Recovery/
 │ ├── P5_Backup_Recovery_SOP.pdf
 │ ├── P5_Recovery_Testing_Checklist.pdf
 │── screenshots/
+│     ├── P5_01_CompanyData_Structure.png
+│     ├── P5_02_ManualBackup_SourceDest.png
+│     ├── P5_03_ManualBackup_Properties.png
+│     ├── P5_04_Run_PowerShell_BackupScript.png
+│     ├── P5_05_DailyBackup_FolderCreated.png
+│     ├── P5_06_BackupLog_File.png
+│     ├── P5_07_File_Before_Delete.png
+│     ├── P5_08_File_After_Delete.png
+│     ├── P5_09_After_Restore_DeletedFile.png
+│     ├── P5_10_Ransomware_Fake_Encrypted.png
+│     ├── P5_11_Ransomware_File_Restored.png
+│     └── P5_12_Recovery_Checklist_Preview.png
 ```
 
 ---
