@@ -8,7 +8,7 @@ This repository demonstrates the skills I use to solve real-world IT Support, Se
 🎓 **Education:** Master of Applied IT  
 💼 **Goal:** IT Support / Service Desk / MSP Technician  
 🧰 **Full Working Rights (485 Visa)**  
-📩 Email: *your email* • 🔗 LinkedIn: *your link* • 🖥 GitHub: Iceppp
+📩 Email: Sawongkhanpassawut@gmail.com • 🔗 LinkedIn: www.linkedin.com/in/passawut-sawongkhan • 🖥 GitHub: Iceppp
 
 ---
 
